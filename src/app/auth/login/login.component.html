@@ -1,1 +1,16 @@
-<p>login works!</p>
+<section>
+  <form [formGroup]="loginForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" #emailInput>
+      <!--<mat-error *ngIf="emailInput.hasError(required)">must not be empty!</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">Invalid Email!</mat-error> -->
+    </mat-form-field>
+    <mat-form-field hintLabel="password should be atleast 6 character long">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" #pwInput>
+      <mat-hint align="end">{{pwInput.value?.length}} /6</mat-hint>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+  </form>
+</section>
