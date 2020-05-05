@@ -23,6 +23,12 @@ export class SidenavListComponent implements OnInit, OnDestroy {
   onSideNavClose() {
     this.sidenavClose.emit();
   }
+
+  onLogout() {
+    this.onSideNavClose();
+    this.authService.logout();
+  }
+
   ngOnDestroy(): void {
     this.authSub.unsubscribe();
   }
