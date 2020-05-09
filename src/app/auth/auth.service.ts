@@ -14,7 +14,7 @@ export class AuthService {
 
   registerUser(authdata: AuthData){
     this.authSuccessFully(authdata);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/training']);
   }
 
   login(authdata: AuthData) {
